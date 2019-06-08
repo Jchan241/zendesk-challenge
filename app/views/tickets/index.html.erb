@@ -3,8 +3,14 @@
     <h1>tickets</h1>
 
     <% @tickets.each do |ticket| %>
-      <p><%= ticket.subject %></p>
-      <%= link_to "here", ticket_path(ticket.id) %>
+      <div class="card d-flex">
+        <div class="card-body d-flex">
+          <p><%= ticket.status %></p>
+          <p class="ml-3"><%= ticket.subject %></p>
+        </div>
+        <%= link_to ticket_path(ticket.id), class: "ticket-link" do %>
+        <% end %>
+      </div>
     <% end %>
 
     <%= will_paginate @tickets %>

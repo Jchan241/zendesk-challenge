@@ -1,1 +1,7 @@
 <h1><%= @ticket.subject %></h1>
+
+Tags:
+<% @ticket.tags.each do |tag| %>
+  <p><%= tag.id %></p>
+<% end %>
+
