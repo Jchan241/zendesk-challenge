@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class Ticket < ApplicationRecord
   TICKETS = ZendeskAPI::Client.new do |config|
     config.url = "https://jchan.zendesk.com/api/v2"
 
