@@ -4,6 +4,7 @@
 
     <% @tickets.each do |ticket| %>
       <p><%= ticket.subject %></p>
+      <%= link_to "here", ticket_path(ticket.id) %>
     <% end %>
 
     <%= will_paginate @tickets %>
