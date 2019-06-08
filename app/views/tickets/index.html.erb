@@ -1,0 +1,11 @@
+<div class="ticket-wrapper">
+  <div class="container my-3">
+    <h1>tickets</h1>
+
+    <% @tickets.each do |ticket| %>
+      <p><%= ticket.subject %></p>
+    <% end %>
+
+    <%= will_paginate @tickets %>
+  </div>
+</div>
