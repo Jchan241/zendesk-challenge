@@ -13,6 +13,6 @@ require 'will_paginate/array'
   private
 
   def get_tickets
-    User::TICKETS.tickets
+    Ticket::TICKETS.tickets
   end
 end
