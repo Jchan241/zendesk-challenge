@@ -1,7 +1,9 @@
-<h1><%= @ticket.subject %></h1>
+<div class="container">
+  <h1><%= @ticket.subject %></h1>
 
-Tags:
-<% @ticket.tags.each do |tag| %>
-  <p><%= tag.id %></p>
-<% end %>
-
+  <p><%= @ticket.description %></p>
+  Tags:
+  <% @ticket.tags.each do |tag| %>
+    <p><%= tag.id %></p>
+  <% end %>
+</div>
