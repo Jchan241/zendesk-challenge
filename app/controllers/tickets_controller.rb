@@ -3,6 +3,10 @@ require 'will_paginate/array'
 
 class TicketsController < ApplicationController
 
+  rescue_from ZendeskAPI::Error::RecordNotFound, with: :error_not_found
+  rescue_from ZendeskAPI::Error::NetworkError, with: :error_not_found
+
+
   def index
     # will_paginate gem only takes in arrays
     @tickets = get_tickets.to_a
@@ -10,8 +14,8 @@ class TicketsController < ApplicationController
   end
 
   def show
-    # .find method from zendesk API
-    @ticket = get_tickets.find(id: params[:id])
+    # .find! method from zendesk API
+    @ticket = get_tickets.find!(id: params[:id])
   end
 
   private
@@ -21,5 +25,9 @@ class TicketsController < ApplicationController
   # .tickets - getting all the data inside key "tickets" from RESULTS
   def get_tickets
     Ticket::RESULTS.tickets
+  end
+
+  def error_not_found
+    render 'tickets/errors/error'
   end
 end

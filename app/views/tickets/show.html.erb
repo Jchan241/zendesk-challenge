@@ -1,9 +1,11 @@
-<div class="container">
-  <h1><%= @ticket.subject %></h1>
+<%= link_to "Back", :back, class: "btn btn-outline-secondary my-3"%>
 
-  <p><%= @ticket.description %></p>
-  Tags:
-  <% @ticket.tags.each do |tag| %>
-    <p><%= tag.id %></p>
-  <% end %>
-</div>
+<h2><%= @ticket.subject %></h2>
+  <div class="d-flex">
+    <p class="mb-0">Tags:</p>
+    <% @ticket.tags.each do |tag| %>
+      <div class="tag card px-2 mx-1"> <%= tag.id %></div>
+    <% end %>
+  </div>
+
+<p class="mt-5"><%= @ticket.description %></p>
