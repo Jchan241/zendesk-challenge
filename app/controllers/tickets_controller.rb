@@ -4,7 +4,7 @@ require 'will_paginate/array'
 class TicketsController < ApplicationController
 
   rescue_from ZendeskAPI::Error::RecordNotFound, with: :error_not_found
-  rescue_from ZendeskAPI::Error::NetworkError, with: :error_not_found
+  rescue_from ZendeskAPI::Error::NetworkError, with: :error_network
 
 
   def index
@@ -28,6 +28,10 @@ class TicketsController < ApplicationController
   end
 
   def error_not_found
-    render 'tickets/errors/error'
+    render 'tickets/errors/not-found-error'
+  end
+
+  def error_not_network
+    render 'tickets/errors/network-error'
   end
 end
