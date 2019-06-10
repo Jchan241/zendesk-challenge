@@ -31,7 +31,7 @@ class TicketsController < ApplicationController
     render 'tickets/errors/not-found-error'
   end
 
-  def error_not_network
+  def error_network
     render 'tickets/errors/network-error'
   end
 end
