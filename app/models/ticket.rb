@@ -2,8 +2,8 @@ class Ticket < ApplicationRecord
   RESULTS = ZendeskAPI::Client.new do |config|
     config.url = "https://jchan.zendesk.com/api/v2"
 
-    config.username = "johchan24@gmail.com"
+    config.username = ENV['USERNAME']
 
-    config.token = "7pRnKgIuglQBcWrWjAww4Yop0cAT8ltnrCqybXvo"
+    config.token = ENV['TOKEN']
   end
 end

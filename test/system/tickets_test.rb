@@ -11,4 +11,5 @@ class TicketsTest < ApplicationSystemTestCase
     visit "/tickets/123456789"
     assert_selector "h3", text: "Record Not Found Error"
   end
+
 end
