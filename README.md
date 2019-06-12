@@ -25,11 +25,11 @@ This web app will grab tickets from the zendesk api, display them in a readable 
     ```
     bundle install
     ```
-4. Add username and token from email, please edit below
+4. Add username and token from email, please edit below (for security, hiding token from public)
     ```
     touch .env
-    echo USERNAME = 'username from email' >> .env
-    echo TOKEN = 'token from email' >> .env
+    echo USERNAME = "username from email" >> .env
+    echo TOKEN = "token from email" >> .env
     ```
 5. Start server
     ```
@@ -40,8 +40,11 @@ This web app will grab tickets from the zendesk api, display them in a readable 
 ### Tests
 
 Run ```rails test:system``` for system tests
+Run ```rails test``` for integration tests
+
+There is an additional system test that tests the connection to the zendesk api. It is commented out, to test it, it'll need to be uncomment it and to mimic the error, Internet connectivity will need to be turned off.
 
 ### Challenges
 
-1. Researching how to get tickets from Zendesk api
+1. Researching how to get tickets from zendesk api
 2. Understanding paginate feature of zendesk api gem, ended up using will_paginate

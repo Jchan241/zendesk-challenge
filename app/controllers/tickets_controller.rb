@@ -1,8 +1,8 @@
 # Unable to get will_paginate with only gem
-require 'will_paginate/array'
+require "will_paginate/array"
 
 class TicketsController < ApplicationController
-
+  # Redirects to render friendly error handling pages
   rescue_from ZendeskAPI::Error::RecordNotFound, with: :error_not_found
   rescue_from ZendeskAPI::Error::NetworkError, with: :error_network
 
@@ -27,11 +27,12 @@ class TicketsController < ApplicationController
     Ticket::RESULTS.tickets
   end
 
+  # renders error pages based on the type of error
   def error_not_found
-    render 'tickets/errors/not-found-error'
+    render "tickets/errors/not-found-error"
   end
 
   def error_network
-    render 'tickets/errors/network-error'
+    render "tickets/errors/network-error"
   end
 end
