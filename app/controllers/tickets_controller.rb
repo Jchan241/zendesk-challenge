@@ -5,6 +5,7 @@ class TicketsController < ApplicationController
   # Redirects to render friendly error handling pages
   rescue_from ZendeskAPI::Error::RecordNotFound, with: :error_not_found
   rescue_from ZendeskAPI::Error::NetworkError, with: :error_network
+  rescue_from StandardError, with: :error_network
 
 
   def index
@@ -34,5 +35,9 @@ class TicketsController < ApplicationController
 
   def error_network
     render "tickets/errors/network-error"
+  end
+
+  def standard_error
+    render "tickets/errors/standard-error"
   end
 end
