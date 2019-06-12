@@ -7,9 +7,9 @@ This web app will grab tickets from the zendesk api, display them in a readable 
 ## Installation
 
 1. Ensure ruby is installed by running this command in terminal
-      rbenv install 2.5.3
+    ```rbenv install 2.5.3```
     or check the version of ruby by running this commant, should be at least version 2.5.3
-      ruby -v
+    ```ruby -v```
 2. Make a new directory and clone this github repository
     ```
     cd ~/
@@ -18,12 +18,15 @@ This web app will grab tickets from the zendesk api, display them in a readable 
     cd zendesk-challenge
     ```
 3. Install necessary gems
-    bundle install
-4. touch .env
+    ```bundle install```
+4. Add username and token from email, please edit below
+    ```
+    touch .env
     echo USERNAME = 'username from email' >> .env
     echo TOKEN = 'token from email' >> .env
+    ```
 5. Start server
-    rails s
+    ```rails s```
 6. Launch Chrome and navigate to http://localhost:3000
 
 ### Tests
