@@ -44,6 +44,10 @@ This web app will grab tickets from the zendesk api, display them in a readable 
 
 There is an additional system test that tests the connection to the zendesk api. It is commented out, to test it, it'll need to be uncomment it and to mimic the error, Internet connectivity will need to be turned off.
 
+### Design choices
+
+Ruby on rails was chosen as I wanted to get this up and running as soon as possible while making it look nice and presentable. I wanted to only use the zendesk api gem for the paginate as well as grabbing the tickets, but I was unable to figure out how it works. I didn't want to spend too much time so I ended up using the will_paginate gem. Fetching the tickets was done inside the model, I thought about putting it in the controller because it's the controllers job to redirect information however, I thought of the tickets as data, which is the reason why I have placed it in the controller.
+
 ### Challenges
 
 1. Researching how to get tickets from zendesk api
