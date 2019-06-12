@@ -39,8 +39,8 @@ This web app will grab tickets from the zendesk api, display them in a readable 
 
 ### Tests
 
-Run ```rails test:system``` for system tests
-Run ```rails test``` for integration tests
+* Run ```rails test:system``` for system tests
+* Run ```rails test``` for integration tests
 
 There is an additional system test that tests the connection to the zendesk api. It is commented out, to test it, it'll need to be uncomment it and to mimic the error, Internet connectivity will need to be turned off.
 
