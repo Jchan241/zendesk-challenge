@@ -1,44 +1,36 @@
-Zendesk ticket viewer
+# Zendesk ticket viewer
 
-Summary
+## Summary
 
 This web app will grab tickets from the zendesk api, display them in a readable format for 25 per page. Clicking on individual tickets will display more information of each ticket.
 
-Installation
+## Installation
 
 1. Ensure ruby is installed by running this command in terminal
       rbenv install 2.5.3
     or check the version of ruby by running this commant, should be at least version 2.5.3
       ruby -v
 2. Make a new directory and clone this github repository
+    ```
     cd ~/
     mkdir johnny-chan-zendesk-challenge && cd johnny-chan-zendesk-challenge
     git clone git@github.com:Jchan241/zendesk-challenge.git
     cd zendesk-challenge
+    ```
 3. Install necessary gems
     bundle install
+4. touch .env
+    echo USERNAME = 'username from email' >> .env
+    echo TOKEN = 'token from email' >> .env
+5. Start server
+    rails s
+6. Launch Chrome and navigate to http://localhost:3000
 
-# README
+### Tests
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Run ```rails test:system``` for system tests
 
-Things you may want to cover:
+### Challengers
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Researching how to get tickets from Zendesk api
+2. Understanding paginate feature of zendesk api gem, ended up using will_paginate
