@@ -13,10 +13,10 @@ class TicketsTest < ApplicationSystemTestCase
     assert_selector "h2", text: "Sample ticket: Meet the ticket"
   end
 
-  test "clicking to different page" do
+  test "clicking to different page from index" do
     visit "/"
     find(:xpath, "//a[@href='/?page=3']").click
-    assert_selector 'p', text: "51"
+    assert_selector "p", text: "51"
   end
 
   test "clicking back from a ticket" do
@@ -29,5 +29,12 @@ class TicketsTest < ApplicationSystemTestCase
     visit "/tickets/123456789"
     assert_selector "h3", text: "Record Not Found Error"
   end
+
+  # test below only works when zendesk api cant not be reached due to network issues.
+
+  # test "network error if zendesk api cant be reached" do
+  #   visit "/tickets/1"
+  #   assert_selector "h3", text: "Network Error"
+  # end
 
 end
